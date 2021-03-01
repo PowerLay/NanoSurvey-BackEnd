@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NanoSurvey BeckEnd", "NanoSurvey BeckEnd\NanoSurvey BeckEnd.csproj", "{FCC7BE06-EBEA-4535-BB21-869965887492}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FCC7BE06-EBEA-4535-BB21-869965887492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCC7BE06-EBEA-4535-BB21-869965887492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCC7BE06-EBEA-4535-BB21-869965887492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCC7BE06-EBEA-4535-BB21-869965887492}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7C93D1D-7EE1-47AA-93FA-9D2DD62F0D8B}
+	EndGlobalSection
+EndGlobal
