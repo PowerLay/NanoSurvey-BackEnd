@@ -59,7 +59,23 @@ namespace NanoSurvey_BeckEnd.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Question>>> Get()
         {
-            return await db.Questions.ToListAsync();
+            var actionResult = await db.Questions.ToListAsync();
+            foreach (var question in actionResult)
+            {
+                GetAnswers(question);
+            }
+            return actionResult;
+        }
+
+        private void GetAnswers(Question question)
+        {
+            var answers = db.Answers.Where(p => p.Question == question).ToList();
+            foreach (var answer in answers)
+            {
+                answer.Question = null;
+            }
+
+            question.Answers = answers;
         }
 
         // GET api/survay/5
@@ -69,6 +85,9 @@ namespace NanoSurvey_BeckEnd.Controllers
             Question question = await db.Questions.FirstOrDefaultAsync(x => x.Id == id);
             if (question == null)
                 return NotFound();
+
+            GetAnswers(question);
+
             return new ObjectResult(question);
         }
 
