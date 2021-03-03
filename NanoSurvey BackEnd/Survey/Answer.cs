@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace NanoSurvey_BeckEnd.Survey
+﻿namespace NanoSurvey_BackEnd.Survey
 {
     public class Answer
     {

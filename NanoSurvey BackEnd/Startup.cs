@@ -1,16 +1,10 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using NanoSurvey_BeckEnd.Survey;
+using Microsoft.Extensions.DependencyInjection;
+using NanoSurvey_BackEnd.Survey;
 
-namespace NanoSurvey_BeckEnd
+namespace NanoSurvey_BackEnd
 {
     public class Startup
     {
@@ -18,7 +12,7 @@ namespace NanoSurvey_BeckEnd
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            string con = "Server=(localdb)\\mssqllocaldb;Database=surveydb;Trusted_Connection=True;";
+            var con = "Server=(localdb)\\mssqllocaldb;Database=surveydb;Trusted_Connection=True;";
             // устанавливаем контекст данных
             services.AddDbContext<SurveyContext>(options => options.UseSqlServer(con));
 

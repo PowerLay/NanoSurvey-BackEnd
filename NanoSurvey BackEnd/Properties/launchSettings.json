@@ -16,7 +16,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "NanoSurvey_BeckEnd": {
+    "NanoSurvey_BackEnd": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

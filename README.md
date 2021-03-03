@@ -1,5 +1,5 @@
-# NanoSurvey-BeckEnd
-Бекенд часть сайта с опросами. 
+# NanoSurvey-BackEnd
+BackEnd часть сайта с опросами. 
 ## Технологии
 * MS SQL
 * Entity Framework Core

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>NanoSurvey_BeckEnd</RootNamespace>
+    <RootNamespace>NanoSurvey_BackEnd</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

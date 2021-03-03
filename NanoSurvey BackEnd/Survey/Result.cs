@@ -1,4 +1,4 @@
-﻿namespace NanoSurvey_BeckEnd.Survey
+﻿namespace NanoSurvey_BackEnd.Survey
 {
     public class Result
     {
