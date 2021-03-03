@@ -15,4 +15,4 @@
       1. InterviewId
       1. QuestionId
       1. AnswerId
-   Возвращет созданный Result.
+   1. Возвращет созданный Result.
