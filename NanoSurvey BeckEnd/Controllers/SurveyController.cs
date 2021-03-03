@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -31,7 +32,7 @@ namespace NanoSurvey_BeckEnd.Controllers
                     Answers = new List<Answer>()
                     {
                         new Answer() { Text = "Москва" },
-                        new Answer() { Text = "Московская область" }, 
+                        new Answer() { Text = "Московская область" },
                         new Answer() { Text = "Санкт-Петербург" },
                         new Answer() { Text = "Ленинградская область" },
                         new Answer() { Text = "Рязанская область" },
@@ -78,7 +79,7 @@ namespace NanoSurvey_BeckEnd.Controllers
             question.Answers = answers;
         }
 
-        // GET api/survay/5
+        // GET api/survey/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Question>> Get(int id)
         {
@@ -91,16 +92,25 @@ namespace NanoSurvey_BeckEnd.Controllers
             return new ObjectResult(question);
         }
 
-        // POST api/survay
+        // POST api/survey
         [HttpPost]
-        public async Task<ActionResult<Answer>> Post(Answer answer)
+        public async Task<ActionResult<Result>> Post(int[] ids)
         {
-            if (answer == null)
+            var answer = new Result()
+            {
+                Interview = db.Interviews.FirstOrDefault(x => x.Id == ids[0]),
+                Question = db.Questions.FirstOrDefault(x => x.Id == ids[1]),
+                Answer = db.Answers.FirstOrDefault(x => x.Id == ids[2])
+            };
+            if (answer.Answer == null || answer.Question == null)
             {
                 return BadRequest();
             }
 
-            db.Answers.Add(answer);
+            answer.Answer.Question = null;
+            answer.Question.Answers = null;
+
+            db.Results.Add(answer);
             await db.SaveChangesAsync();
             return Ok(answer);
         }
